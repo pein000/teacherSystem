@@ -26,5 +26,11 @@
             <systemPath>D:/ocr/test-tess/opencv/opencv-310.jar</systemPath>
             <scope>system</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.pein.teacher</groupId>
+            <artifactId>ts-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

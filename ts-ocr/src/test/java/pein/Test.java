@@ -35,7 +35,7 @@ public class Test {
 //        instance.setPageSegMode(ITessAPI.TessPageSegMode.PSM_SINGLE_LINE);
         //二值化
         long begin1 = System.currentTimeMillis();
-        String src = improveQuantity("D:\\picture\\__MACOSX\\img\\p1.jpg","D:\\picture\\src3.jpg");
+        String src = improveQuantity("D:\\picture\\t1.jpg","D:\\picture\\src4.jpg");
         long end1 = System.currentTimeMillis();
         System.out.println("time1 : "+(end1 - begin1));
         try {

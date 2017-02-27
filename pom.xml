@@ -10,7 +10,25 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ts-ocr</module>
+        <module>ts-common</module>
     </modules>
 
+    <properties>
+        <spring.boot.version>1.2.6.RELEASE</spring.boot.version>
+        <spring.version>4.1.5.RELEASE</spring.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
