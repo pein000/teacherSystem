@@ -1,0 +1,26 @@
+.title {
+    width: 60%;
+    margin-left: 150px;
+}
+
+.content {
+    height: 500px;
+}
+
+.image {
+    width: 60%;
+    margin-left: 150px;
+}
+
+.div-data{
+    margin-top: 10%;
+    text-align: center;
+}
+
+.top-back{
+    margin-top: 10%;
+}
+
+.red{
+    background: red;
+}

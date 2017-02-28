@@ -33,4 +33,22 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>ts-ocr</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.0.RELEASE</version>
+                <configuration>
+                    <mainClass>cn.vfinance.open.gateway.alipay.ApplicationContext</mainClass>
+                    <!--<mainClass>${start-class}</mainClass>-->
+                    <addResources>true</addResources>
+                    <!--<finalName>secured</finalName>-->
+                    <!--<classifier>secured</classifier>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

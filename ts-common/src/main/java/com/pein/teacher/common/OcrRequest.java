@@ -24,4 +24,12 @@ public class OcrRequest {
     public void setDest(String dest) {
         this.dest = dest;
     }
+
+    @Override
+    public String toString() {
+        return "OcrRequest{" +
+                "origin='" + origin + '\'' +
+                ", dest='" + dest + '\'' +
+                '}';
+    }
 }

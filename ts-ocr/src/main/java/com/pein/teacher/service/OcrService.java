@@ -1,12 +1,13 @@
 package com.pein.teacher.service;
 
+import com.pein.teacher.config.OcrConfiguration;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -17,19 +18,14 @@ import java.io.File;
 @Service
 public class OcrService implements InitializingBean {
 
-    @Value("${path.opencv}")
-    private String opencvPath;
+    @Autowired
+    private OcrConfiguration ocrConfiguration;
 
-    @Value("{tess.data.ocr}")
-    private String ocrTessData;
-
-    @Value("${lan.ocr}")
-    private String ocrLanguage;
 
     public String identify(String src,String dest) {
         Tesseract instance = new Tesseract();
-        instance.setDatapath(ocrTessData);
-        instance.setLanguage(ocrLanguage);
+        instance.setDatapath(ocrConfiguration.getOcrTessData());
+        instance.setLanguage(ocrConfiguration.getOcrLanguage());
         try {
             String result = instance.doOCR(new File(this.binaryzation(src, dest)));
             return result;
@@ -60,6 +56,6 @@ public class OcrService implements InitializingBean {
     }
 
     public void afterPropertiesSet() throws Exception {
-        System.load(opencvPath.toString());
+        System.load(ocrConfiguration.getOpencvPath());
     }
 }

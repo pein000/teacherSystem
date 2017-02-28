@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+        <link href="#springUrl('/css/content.css')" rel="stylesheet"/>
+	</head>
+<body>
+	<span>Time:</span>
+	<ul >
+		<li>From controller: $time</li>
+		<li>From velocity: $dateTool</li>
+	</ul>
+	<span class="red">Message: $message</span>
+</body>
+
+</html>

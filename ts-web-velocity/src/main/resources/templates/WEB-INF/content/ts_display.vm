@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="#springUrl('/css/bootstrap/bootstrap.min.css')" rel="stylesheet"/>
+    <link href="#springUrl('/css/app/image.css')" rel="stylesheet"/>
+    <script src="#springUrl('/js/jquery/jquery.min.js')"></script>
+    <script src="#springUrl('/js/bootstrap/bootstrap.min.js')"></script>
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">下载APP</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">登录</a></li>
+        </ul>
+    </div>
+</nav>
+
+<center>
+    <!--轮播图 -->
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="#springUrl('/images/carousel/21.jpg')" alt="First slide" class="carousel_img"
+                     style="height: 300px;">
+
+                <div class="carousel-caption">标题 1</div>
+            </div>
+            <div class="item">
+                <img src="#springUrl('/images/carousel/22.jpg')" alt="Second slide" class="carousel_img"
+                     style="height: 300px;">
+
+                <div class="carousel-caption">标题 2</div>
+            </div>
+            <div class="item">
+                <img src="#springUrl('/images/carousel/27.jpg')" alt="Third slide" class="carousel_img"
+                     style="height: 300px;">
+
+                <div class="carousel-caption">标题 3</div>
+            </div>
+            <div class="item">
+                <img src="#springUrl('/images/carousel/28.jpg')" alt="Forth slide" class="carousel_img"
+                     style="height: 300px;">
+
+                <div class="carousel-caption">标题 4</div>
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel"
+           data-slide="prev">
+        </a>
+        <a class="carousel-control right" href="#myCarousel"
+           data-slide="next">
+        </a>
+    </div>
+
+    <div class="row col-sm-12">
+        <span class="col-sm-6">标题1</span>
+        <span class="col-sm-6">2012-12-10 12:00:10</span>
+    </div>
+    <div class="row pull-right col-sm-10">
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="#springUrl('/images/orc-test/origin_1.jpg')"
+                     alt="通用的占位符缩略图">
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="#springUrl('/images/orc-test/dest_1.jpg')"
+                     alt="通用的占位符缩略图">
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                a11a21x1 + a12a21x2 = b1a21
+                .
+                .
+                .
+                <a href="#">详情</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row col-sm-12">
+        <span class="col-sm-6">标题2</span>
+        <span class="col-sm-6">2013-12-10 12:00:10</span>
+    </div>
+    <div class="row pull-right col-sm-10">
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="#springUrl('/images/orc-test/origin_2.jpg')"
+                     alt="通用的占位符缩略图">
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="#springUrl('/images/orc-test/dest_2.jpg')"
+                     alt="通用的占位符缩略图">
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                熊猫对子女的抚抱叹TW亩等动作妈
+                问，母熊猫便用嘴把它叨起来，抱在怀里
+                肤， 、当孩于会走后,熊猫妈妈紧跟在后r，
+                许多在地面上筑巢的鸟类,r.一旦遏乏
+                比如在灌木丛中，一窝刚出壳胸雏鹌鹑被
+                了使孩予免遭不幸」便"扑”起飞出来,同日
+                ′ 断 了 翅膀 的鹧鹑「。 狐狸 以 为猎物 tud膏h巳
+                地扑向母鹤享蛆一 但当狐狸的爪予就要抓童
+                -时采不痰逃遇，为了孩子的安全纽母鹌鹑暑
+                1. 看拼音写i司i吾n一(3分〉 ˉ 邂 、 邂 、v
+                ddnq f巨n9 Zh邑 y口 r 亏 yT W巨们
+                z …( 麒、，、)_，、-、 、、、、j、(- )
+                z. 联系上下文v知道文中“调虎离山计”的
+                _ 3~ 硐
+                近义词 : 紧靠〈 ) 放弃
+
+                、 反义词:危险( )、
+                .
+                .
+                .
+                <a href="#">详情</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row col-sm-12">
+        <span class="col-sm-6">标题3</span>
+        <span class="col-sm-6">2014-12-10 12:00:10</span>
+    </div>
+    <div class="row pull-right col-sm-10">
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="#springUrl('/images/orc-test/origin_3.jpg')"
+                     alt="通用的占位符缩略图">
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="#springUrl('/images/orc-test/dest_2.jpg')"
+                     alt="通用的占位符缩略图">
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                壹 + 9 = 可
+                .
+                .
+                .
+                <a href="#">详情</a>
+            </div>
+        </div>
+    </div>
+</center>
+
+</body>
+
+</html>

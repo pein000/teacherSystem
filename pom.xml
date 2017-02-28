@@ -11,9 +11,11 @@
     <modules>
         <module>ts-ocr</module>
         <module>ts-common</module>
+        <module>ts-web-velocity</module>
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>1.2.6.RELEASE</spring.boot.version>
         <spring.version>4.1.5.RELEASE</spring.version>
     </properties>
@@ -27,6 +29,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-velocity</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
