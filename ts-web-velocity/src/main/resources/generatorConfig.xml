@@ -35,7 +35,7 @@
         </sqlMapGenerator>
 
         <!-- 生成dao对应client -->
-        <javaClientGenerator targetPackage="com.pein.teacher.respository"
+        <javaClientGenerator targetPackage="com.pein.teacher.repository"
                              targetProject="src\main\java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>

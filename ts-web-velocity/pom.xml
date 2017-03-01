@@ -14,7 +14,6 @@
     <dependencies>
     <!--Mysql / DataSource-->
         <!--支持使用 JDBC 访问数据库-->
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

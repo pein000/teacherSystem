@@ -12,9 +12,12 @@
 # intellj Files #
 *.iml
 
-# java deploy files #
+# java deploy Files #
 classes/
 *target/*
+
+# maven install Files #
+*${M3_REP_HOME}/*
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

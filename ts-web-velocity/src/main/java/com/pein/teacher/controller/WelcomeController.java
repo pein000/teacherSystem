@@ -26,7 +26,6 @@ import java.util.Map;
 @RequestMapping
 public class WelcomeController {
 
-
 	@RequestMapping("/welcome")
 	public String welcome(Map<String, Object> model) {
 		model.put("time", new Date());
