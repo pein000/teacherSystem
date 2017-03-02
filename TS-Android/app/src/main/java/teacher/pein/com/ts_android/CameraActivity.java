@@ -1,11 +1,9 @@
 package teacher.pein.com.ts_android;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
-import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Environment;
@@ -89,7 +87,8 @@ public class CameraActivity extends Activity {
         if (!isPreview) {
             // 此处默认打开后置摄像头。
             // 通过传入参数可以打开前置摄像头
-            camera = Camera.open(0);  //①
+            camera = Camera.open();  //①
+//            camera = Camera.open(0);  //①
             camera.setDisplayOrientation(90);
         }
         if (camera != null && !isPreview) {
@@ -207,7 +206,7 @@ public class CameraActivity extends Activity {
             return null;
         }
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH.mm.ss", Locale.getDefault());
-        fileName=Environment.getExternalStorageDirectory()+File.separator
+        fileName= Environment.getExternalStorageDirectory()+ File.separator
                 +sdf.format(new Date())+".JPG";
         return fileName;
     }

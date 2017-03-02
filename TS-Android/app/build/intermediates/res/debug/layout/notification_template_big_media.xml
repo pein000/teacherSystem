@@ -58,4 +58,4 @@
         android:id="@+id/action_divider"
         android:background="?android:attr/dividerHorizontal" />
 </RelativeLayout>
-<!-- From: file:/D:/github/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/layout/notification_template_big_media.xml -->
+<!-- From: file:/D:/MyGithub/teacherSystem/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/layout/notification_template_big_media.xml -->

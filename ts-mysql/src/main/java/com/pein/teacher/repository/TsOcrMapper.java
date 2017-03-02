@@ -1,5 +1,6 @@
 package com.pein.teacher.repository;
 
+
 import com.pein.teacher.domain.TsOcr;
 
 import java.util.List;

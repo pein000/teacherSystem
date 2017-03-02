@@ -23,4 +23,4 @@
     <item android:state_selected="true" android:color="?attr/colorControlActivated"/>
     <item android:state_checked="true" android:color="?attr/colorControlActivated"/>
     <item android:color="?attr/colorControlNormal"/>
-</selector><!-- From: file:/D:/github/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/color/abc_tint_default.xml -->
+</selector><!-- From: file:/D:/MyGithub/teacherSystem/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/color/abc_tint_default.xml -->

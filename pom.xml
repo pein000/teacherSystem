@@ -12,6 +12,8 @@
         <module>ts-ocr</module>
         <module>ts-common</module>
         <module>ts-web-velocity</module>
+        <module>ts-mysql</module>
+        <module>ts-app</module>
     </modules>
 
     <properties>
@@ -32,21 +34,9 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-velocity</artifactId>
-            <version>${spring.boot.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-            <version>${spring.boot.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${spring.boot.mybatis.version}</version>
-        </dependency>
+
+
+
     </dependencies>
 
 </project>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/github/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/values-sw600dp-v13/values-sw600dp-v13.xml -->
+    <!-- From: file:/D:/MyGithub/teacherSystem/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/values-sw600dp-v13/values-sw600dp-v13.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">24dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">80dp</dimen>

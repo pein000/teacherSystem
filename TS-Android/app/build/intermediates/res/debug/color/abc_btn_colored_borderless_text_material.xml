@@ -21,4 +21,4 @@
           app:alpha="?android:attr/disabledAlpha"
           android:color="?android:attr/textColorSecondary"/>
     <item android:color="?attr/colorAccent"/>
-</selector><!-- From: file:/D:/github/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/color/abc_btn_colored_borderless_text_material.xml -->
+</selector><!-- From: file:/D:/MyGithub/teacherSystem/TS-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/res/color/abc_btn_colored_borderless_text_material.xml -->
