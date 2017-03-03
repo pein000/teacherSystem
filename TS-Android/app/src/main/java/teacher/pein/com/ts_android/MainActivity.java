@@ -1,6 +1,7 @@
 package teacher.pein.com.ts_android;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,12 +23,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import teacher.pein.com.listener.UploadListener;
+
 
 public class MainActivity extends Activity {
 
     private WebView webView;
 
-    private TextView home, scan, me;
+    private TextView home, scan, me,upload;
 
     private int REQUEST_THUMBNAIL = 1;// 请求缩略图信号标识
 
@@ -42,7 +45,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         initWebView();
         initTextView();
-        initPath();
+//        initPath();
+        initUpload();
     }
 
 
@@ -99,7 +103,7 @@ public class MainActivity extends Activity {
         sdPath = Environment.getExternalStorageDirectory().getPath();
         picPath = sdPath + "/" + "temp.png";
         mImageView = (ImageView) findViewById(R.id.imageView);
-        Log.e("sdPath1", sdPath);
+        Log.e("sdPath1",sdPath);
     }
 
     class LoadUrlClickListener implements View.OnClickListener {
@@ -181,5 +185,20 @@ public class MainActivity extends Activity {
                     }
                }
         }
+    }
+
+    private void initUpload() {
+        upload = (TextView) findViewById(R.id.upload);
+        upload.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, UploadActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        upload.setOnClickListener(new UploadListener(MainActivity.this));
     }
 }

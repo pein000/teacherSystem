@@ -7,4 +7,6 @@
     <string name="scan">扫描</string>
     <string name="me">我</string>
     <string name="title_activity_camera">CameraActivity</string>
+    <string name="title_activity_camera_display">CameraDisplayActivity</string>
+    <string name="title_activity_upload">UploadActivity</string>
 </resources>

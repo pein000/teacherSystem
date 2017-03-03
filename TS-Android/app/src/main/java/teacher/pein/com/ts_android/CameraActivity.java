@@ -1,9 +1,11 @@
 package teacher.pein.com.ts_android;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
+import android.graphics.PixelFormat;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Environment;
@@ -206,7 +208,7 @@ public class CameraActivity extends Activity {
             return null;
         }
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH.mm.ss", Locale.getDefault());
-        fileName= Environment.getExternalStorageDirectory()+ File.separator
+        fileName=Environment.getExternalStorageDirectory()+File.separator
                 +sdf.format(new Date())+".JPG";
         return fileName;
     }
