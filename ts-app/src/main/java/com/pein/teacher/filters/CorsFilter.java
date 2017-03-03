@@ -19,7 +19,6 @@ import java.io.IOException;
 public class CorsFilter implements Filter {
   
     private final static Logger LOGGER = LoggerFactory.getLogger(CorsFilter.class);
-  
 
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) res;
