@@ -6,7 +6,9 @@
     <string name="home">主页</string>
     <string name="scan">扫描</string>
     <string name="me">我</string>
+    <string name="upload_btn">上传</string>
     <string name="title_activity_camera">CameraActivity</string>
     <string name="title_activity_camera_display">CameraDisplayActivity</string>
     <string name="title_activity_upload">UploadActivity</string>
+    <string name="title_activity_async_upload">AsyncUploadActivity</string>
 </resources>

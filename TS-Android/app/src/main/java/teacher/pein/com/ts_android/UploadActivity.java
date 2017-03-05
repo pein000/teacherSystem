@@ -31,6 +31,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import teacher.pein.com.view.ProcessImageView;
 
 
 public class UploadActivity extends Activity {
@@ -39,10 +40,13 @@ public class UploadActivity extends Activity {
 
     private ImageView imageView;
 
+    private ProcessImageView processImageView;
+
     private String picPath;
 
     private static final MediaType MEDIA_TYPE_PNG = MediaType.parse("multipart/form-data");
 
+    int progress = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +58,7 @@ public class UploadActivity extends Activity {
         photo_btn = (Button) findViewById(R.id.photo_btn);
         store_btn = (Button) findViewById(R.id.store_btn);
         imageView = (ImageView) findViewById(R.id.iv_store);
+        processImageView = (ProcessImageView) findViewById(R.id.imageProcess);
         //获取SD卡的路径
         picPath = Environment.getExternalStorageDirectory().getPath() + "/picture/" + "temp.png";
         File directory = new File(Environment.getExternalStorageDirectory().getPath() + "/picture");
@@ -101,6 +106,7 @@ public class UploadActivity extends Activity {
                     Bitmap bitmap = BitmapFactory.decodeStream(fis);
 
                     imageView.setImageBitmap(bitmap);
+                    processImageView.setImageBitmap(bitmap);
                     //更新图库
                     Uri localUri = Uri.fromFile(new File(picPath));
                     Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, localUri);
@@ -149,7 +155,7 @@ public class UploadActivity extends Activity {
             protected String doInBackground(String... params) {
                 String responseData = null;
                 try {
-                    responseData = HttpClient.post("http://10.5.18.8:8081/ts-app/image/upload")
+                    responseData = HttpClient.post("http://192.168.99.1:8081/ts-app/image/upload")
                             .param("name", "李四")
                             .param("mobile", "13023614021")
                             .param("imageFile", new FileInputStream(picPath), "avatar.png")
@@ -167,6 +173,7 @@ public class UploadActivity extends Activity {
             @Override
             protected void onProgressUpdate(String... values) {
                 Log.e("progress : ", values[0]);
+                processImageView.setProgress(++progress);
                 super.onProgressUpdate(values);
             }
         }.execute(picPath);

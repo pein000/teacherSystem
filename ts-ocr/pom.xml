@@ -23,7 +23,7 @@
             <groupId>org.opencv</groupId>
             <artifactId>opencv</artifactId>
             <version>3.1.0</version>
-            <systemPath>D:/ocr/test-tess/opencv/opencv-310.jar</systemPath>
+            <systemPath>${project.basedir}/opencv/opencv-310.jar</systemPath>
             <scope>system</scope>
         </dependency>
 
@@ -42,7 +42,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.4.0.RELEASE</version>
                 <configuration>
-                    <mainClass>cn.vfinance.open.gateway.alipay.ApplicationContext</mainClass>
+                    <mainClass>com.pein.teacher.ApplicationContext</mainClass>
                     <!--<mainClass>${start-class}</mainClass>-->
                     <addResources>true</addResources>
                     <!--<finalName>secured</finalName>-->

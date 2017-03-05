@@ -21,16 +21,18 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import teacher.pein.com.listener.UploadListener;
+import teacher.pein.com.view.ProcessImageView;
 
 
 public class MainActivity extends Activity {
 
     private WebView webView;
 
-    private TextView home, scan, me,upload;
+    private TextView home, scan, me, upload;
 
     private int REQUEST_THUMBNAIL = 1;// 请求缩略图信号标识
 
@@ -39,6 +41,9 @@ public class MainActivity extends Activity {
     private String sdPath;//SD卡的路径
     private String picPath;//图片存储路径
     private ImageView mImageView;
+
+    private ProcessImageView processImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +51,6 @@ public class MainActivity extends Activity {
         initWebView();
         initTextView();
 //        initPath();
-        initUpload();
     }
 
 
@@ -80,7 +84,6 @@ public class MainActivity extends Activity {
 
                 } else {
                     // 加载中
-
                 }
 
             }
@@ -92,18 +95,22 @@ public class MainActivity extends Activity {
         home = (TextView) findViewById(R.id.home);
         scan = (TextView) findViewById(R.id.scan);
         me = (TextView) findViewById(R.id.me);
+        upload = (TextView) findViewById(R.id.upload);
+
+        //获取SD卡的路径
+        sdPath = Environment.getExternalStorageDirectory().getPath();
+        picPath = sdPath + "/picture/" + System.currentTimeMillis() + ".png";
+        File directory = new File(sdPath + "/picture");
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+        mImageView = (ImageView) findViewById(R.id.imageView);
+        processImageView = (ProcessImageView) findViewById(R.id.image_process);
 
         home.setOnClickListener(new LoadUrlClickListener("http://www.toutiao.com"));
         scan.setOnClickListener(new CameraClickListener());
         me.setOnClickListener(new LoadUrlClickListener("http://10.5.18.8:8080/ts-web-velocity/display/to_display"));
-    }
-
-    private void initPath() {
-        //获取SD卡的路径
-        sdPath = Environment.getExternalStorageDirectory().getPath();
-        picPath = sdPath + "/" + "temp.png";
-        mImageView = (ImageView) findViewById(R.id.imageView);
-        Log.e("sdPath1",sdPath);
+        upload.setOnClickListener(new UploadCLickListener());
     }
 
     class LoadUrlClickListener implements View.OnClickListener {
@@ -156,8 +163,7 @@ public class MainActivity extends Activity {
                 Bundle bundle = data.getExtras();
                 Bitmap bitmap = (Bitmap) bundle.get("data");
                 mImageView.setImageBitmap(bitmap);
-                }
-            else if (requestCode == REQUEST_ORIGINAL) {//对应第二种方法
+            } else if (requestCode == REQUEST_ORIGINAL) {//对应第二种方法
                 /**
                           * 这种方法是通过内存卡的路径进行读取图片，所以的到的图片是拍摄的原图
                           */
@@ -174,31 +180,59 @@ public class MainActivity extends Activity {
                     Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, localUri);
                     sendBroadcast(localIntent);
 
-                    } catch (FileNotFoundException e) {
+                } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    } finally {
+                } finally {
                     try {
                         fis.close();//关闭流
-                        } catch (IOException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
-                        }
                     }
-               }
+                }
+            } else if (requestCode == 0) {
+                //更新到图库之后，再跳转
+                Uri localUri = Uri.fromFile(new File(picPath));
+                Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, localUri);
+                sendBroadcast(localIntent);
+
+                //保存到本地
+                Bundle bundleD = data.getExtras();
+                Bitmap bitmap = (Bitmap) bundleD.get("data");// 获取相机返回的数据，并转换为Bitmap图片格式
+                try {
+                    FileOutputStream fileOutputStream = new FileOutputStream(picPath);
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);// 把数据写入文件
+                    fileOutputStream.flush();
+                    fileOutputStream.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, AsyncUploadActivity.class);
+                //用Bundle携带数据
+                Bundle bundle=new Bundle();
+                //传递name参数为path
+                bundle.putString("path", picPath);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+
         }
     }
 
-    private void initUpload() {
-        upload = (TextView) findViewById(R.id.upload);
-        upload.setOnClickListener(new View.OnClickListener() {
+    private class UploadCLickListener implements View.OnClickListener {
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, UploadActivity.class);
-                startActivity(intent);
-            }
-        });
-
-//        upload.setOnClickListener(new UploadListener(MainActivity.this));
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//            Uri uri = Uri.fromFile(new File(picPath));
+//            //为拍摄的图片指定一个存储的路径
+//            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+            // 启动相机
+            startActivityForResult(intent, 0); //原图
+        }
     }
 }

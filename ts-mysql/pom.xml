@@ -47,7 +47,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.4.0.RELEASE</version>
                 <configuration>
-                    <!--<mainClass>cn.vfinance.open.gateway.alipay.ApplicationContext</mainClass>-->
+                    <mainClass>com.pein.teacher.MysqlApplication</mainClass>
                     <!--<mainClass>${start-class}</mainClass>-->
                     <addResources>true</addResources>
                     <!--<finalName>secured</finalName>-->

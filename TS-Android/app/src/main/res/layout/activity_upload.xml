@@ -1,28 +1,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="teacher.pein.com.ts_android.UploadActivity">
 
 
     <Button
+        android:id="@+id/photo_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="拍照"
-        android:id="@+id/photo_btn" />
+        android:text="拍照" />
 
     <Button
+        android:id="@+id/store_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="相册"
-        android:id="@+id/store_btn" />
+        android:text="相册" />
 
     <ImageView
         android:id="@+id/iv_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <teacher.pein.com.view.ProcessImageView
+        android:id="@+id/imageProcess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="This is a ProcessImage">
+
+    </teacher.pein.com.view.ProcessImageView>
 
 </LinearLayout>
